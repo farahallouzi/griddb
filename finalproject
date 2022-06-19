@@ -1,0 +1,109 @@
+package binarytodecimal;
+import java.util.Scanner;
+public class louzi {
+
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	int dec=0,base=1,i=0,rmd1,rmd,rrd;
+	long rem,bin;
+	Scanner num1 = new Scanner(System.in);
+	System.out.println("enter the binary number:");
+	long num = num1.nextLong();
+	bin = num;
+	while(num>0) {//1111//111//11//1
+	rem= num%10;//1//1//1//1
+	num=num/10;//111//11//1//0
+	dec+=rem * base;//1+2+4+8
+	base = base*2;//2//4//8//16
+	}
+	System.out.println("binary number = "+ bin);
+	System.out.println("decimal number = "+ dec);
+	int d1 = dec;
+	while(dec > 0)
+	{
+	       ////111///11///1//0
+	dec /= 10;  //=11///=1////0
+	i++;        //=1///=2//=3
+	}
+
+	int[] arr = new int[i];
+	int k=0;
+	while(d1 > 0)
+	{
+	rmd1 = d1 % 10;//255=5//25=5//2=2
+	d1 /= 10; //25//=2//0
+	arr[k]=rmd1;//p1=5////p2=5//p3=2
+	k++;
+	}
+	for(int a=arr.length-1;a>-1;a--)
+	{
+	if(arr[a]==1||arr[a]==4) {
+	System.out.print("      ");
+	}
+	else if(arr[a]==2||arr[a]==3||arr[a]==5||arr[a]==6||arr[a]==7||arr[a]==8||arr[a]==9||arr[a]==0) {
+	System.out.print(" ____ ");
+	}
+	}
+	System.out.print("\n");
+	for(int a=arr.length-1;a>-1;a--)
+	{
+	if(arr[a]==1||arr[a]==2||arr[a]==3||arr[a]==7) {
+	System.out.print("     |");
+	}
+	else if(arr[a]==9||arr[a]==8||arr[a]==4||arr[a]==0) {
+	System.out.print("|    |");
+	}
+	else if(arr[a]==5||arr[a]==6) {
+	System.out.print("|     ");
+	}
+	}
+	System.out.print("\n");
+	for(int a=arr.length-1;a>-1;a--)
+	{
+	if(arr[a]==0) {
+	System.out.print("|    |");
+	}
+	if(arr[a]==1||arr[a]==7) {
+	System.out.print("     |");
+	}
+	else if(arr[a]==9||arr[a]==8||arr[a]==4) {
+	System.out.print("|____|");
+	}
+	else if(arr[a]==5||arr[a]==6) {
+	System.out.print("|____ ");
+	}
+	else if(arr[a]==3||arr[a]==2) {
+	System.out.print(" ____|");
+	}
+	}
+	System.out.print("\n");
+	for(int a=arr.length-1;a>-1;a--)
+	{
+	if(arr[a]==1||arr[a]==3||arr[a]==7||arr[a]==5||arr[a]==4||arr[a]==9) {
+	System.out.print("     |");
+	}
+	else if(arr[a]==8||arr[a]==0||arr[a]==6) {
+	System.out.print("|    |");
+	}
+	else if(arr[a]==2) {
+	System.out.print("|     ");
+	}
+	}
+	System.out.print("\n");
+	for(int a=arr.length-1;a>-1;a--)
+	{
+	if(arr[a]==1||arr[a]==7||arr[a]==4) {
+	System.out.print("     |");
+	}
+	else if(arr[a]==8||arr[a]==0||arr[a]==6) {
+	System.out.print("|____|");
+	}
+	else if(arr[a]==2) {
+	System.out.print("|____ ");
+	}
+	else if(arr[a]==3||arr[a]==9||arr[a]==5) {
+	System.out.print(" ____|");
+	}
+	}
+	}
+	}
